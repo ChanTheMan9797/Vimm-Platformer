@@ -16,8 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Mini 2D Platformer"
-run/main_scene="res://Vimm/World.tscn"
-config/icon="res://Vimm/icon.png"
+run/main_scene="res://World.tscn"
+config/icon="res://icon.png"
 
 [input]
 
@@ -56,4 +56,4 @@ ui_down={
 
 [rendering]
 
-environment/default_environment="res://Vimm/default_env.tres"
+environment/default_environment="res://default_env.tres"
