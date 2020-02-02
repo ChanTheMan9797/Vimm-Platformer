@@ -1,57 +1,55 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Vimm/VimmRun(2).png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Vimm/Vimmrun1 (1).png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Vimm/Vimmrun2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Vimm/Vimmrun3.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Vimm/VimmIdle1.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Vimm/VimmIdle2.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Vimm/VimmIdle3.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Vimm/VimmIdle4.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Vimm/Vimmjmp0.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Vimm/Vimmjmp1.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Vimm/Vimmjmp2.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Vimm/Vimmjmp3.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Vimm/Vimmjmp4.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp3.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Vimm/VimmRun(2).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Vimm/Vimmrun1 (1).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Vimm/Vimmrun2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Vimm/Vimmrun3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Vimm/VimmIdle1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Vimm/VimmIdle2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Vimm/VimmIdle3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Vimm/VimmIdle4.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp0.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp1.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp2.png" type="Texture" id=14]
 [ext_resource path="res://Floor.gd" type="Script" id=15]
 [ext_resource path="res://icon.png" type="Texture" id=16]
-[ext_resource path="res://Area2D.gd" type="Script" id=17]
-[ext_resource path="res://Sprites/Vimm/VimmRun0.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Environment/Tilesheet/MarsDesertTileMap.tres" type="TileSet" id=17]
+[ext_resource path="res://SpiderMonster.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Sprites/Environment/Background/BG_sky.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/Environment/Background/BG_mountains1.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/Environment/Background/BG_mountains2.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 3.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 28 )
+extents = Vector2( 12, 28 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 160, 32 )
-
-[sub_resource type="RectangleShape2D" id=4]
 
 [node name="Desert" type="TextureRect"]
 show_behind_parent = true
@@ -66,21 +64,21 @@ expand = true
 [node name="World" type="Node" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="World"]
+editor/display_folded = true
 position = Vector2( 96, 448 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="World/Player"]
 position = Vector2( -9, 0 )
 scale = Vector2( 0.786458, 0.772033 )
 frames = SubResource( 1 )
 animation = "Run"
+frame = 2
 speed_scale = 1.5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player"]
+position = Vector2( -11.6751, 0.182709 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
@@ -99,11 +97,16 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="Floors" type="Node" parent="World"]
+editor/display_folded = true
 
 [node name="Floor" type="KinematicBody2D" parent="World/Floors"]
-position = Vector2( 160, 512 )
+editor/display_folded = true
+position = Vector2( 221.899, 1502.69 )
 scale = Vector2( 10, 1 )
 script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="World/Floors/Floor"]
 modulate = Color( 0.878431, 0.109804, 0.109804, 1 )
@@ -113,26 +116,28 @@ texture = ExtResource( 16 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floors/Floor"]
 shape = SubResource( 3 )
 
-[node name="Area2D" type="Area2D" parent="World"]
-position = Vector2( 160, 448 )
-script = ExtResource( 17 )
+[node name="TileMap" type="TileMap" parent="World"]
+tile_set = ExtResource( 17 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 851996, 4, 0, 851997, 4, 0, 852009, 4, 0, 852010, 4, 0, 917524, 0, 0, 917525, 1, 0, 917532, 4, 0, 917533, 4, 0, 917545, 4, 0, 917546, 4, 0, 983042, 0, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 2, 0, 983055, 0, 0, 983056, 1, 0, 983057, 2, 0, 983068, 4, 0, 983069, 4, 0, 983081, 4, 0, 983082, 4, 0, 1048578, 5, 0, 1048579, 4, 0, 1048580, 4, 0, 1048581, 4, 0, 1048582, 4, 0, 1048583, 4, 0, 1048584, 4, 0, 1048585, 4, 0, 1048586, 4, 0, 1048587, 4, 0, 1048588, 3, 0, 1048591, 12, 0, 1048592, 11, 0, 1048593, 10, 0, 1048604, 0, 0, 1048605, 1, 0, 1048606, 1, 0, 1048607, 1, 0, 1048608, 1, 0, 1048609, 1, 0, 1048610, 1, 0, 1048611, 1, 0, 1048612, 1, 0, 1048613, 1, 0, 1048614, 1, 0, 1048615, 1, 0, 1048616, 1, 0, 1048617, 1, 0, 1048618, 2, 0, 1114114, 5, 0, 1114115, 4, 0, 1114116, 4, 0, 1114117, 4, 0, 1114118, 4, 0, 1114119, 4, 0, 1114120, 4, 0, 1114121, 4, 0, 1114122, 4, 0, 1114123, 4, 0, 1114124, 3, 0, 1114140, 5, 0, 1114141, 4, 0, 1114142, 4, 0, 1114143, 4, 0, 1114144, 4, 0, 1114145, 4, 0, 1114146, 4, 0, 1114147, 4, 0, 1114148, 4, 0, 1114149, 4, 0, 1114150, 4, 0, 1114151, 4, 0, 1114152, 4, 0, 1114153, 4, 0, 1114154, 3, 0, 1179650, 12, 0, 1179651, 11, 0, 1179652, 11, 0, 1179653, 11, 0, 1179654, 11, 0, 1179655, 11, 0, 1179656, 11, 0, 1179657, 11, 0, 1179658, 11, 0, 1179659, 11, 0, 1179660, 10, 0, 1179676, 5, 0, 1179677, 4, 0, 1179678, 4, 0, 1179679, 4, 0, 1179680, 4, 0, 1179681, 4, 0, 1179682, 4, 0, 1179683, 4, 0, 1179684, 4, 0, 1179685, 4, 0, 1179686, 4, 0, 1179687, 4, 0, 1179688, 4, 0, 1179689, 4, 0, 1179690, 3, 0, 1245212, 5, 0, 1245213, 4, 0, 1245214, 4, 0, 1245215, 4, 0, 1245216, 4, 0, 1245217, 4, 0, 1245218, 4, 0, 1245219, 4, 0, 1245220, 4, 0, 1245221, 4, 0, 1245222, 4, 0, 1245223, 4, 0, 1245224, 4, 0, 1245225, 4, 0, 1245226, 3, 0, 1310748, 5, 0, 1310749, 4, 0, 1310750, 4, 0, 1310751, 4, 0, 1310752, 4, 0, 1310753, 4, 0, 1310754, 4, 0, 1310755, 4, 0, 1310756, 4, 0, 1310757, 4, 0, 1310758, 4, 0, 1310759, 4, 0, 1310760, 4, 0, 1310761, 4, 0, 1310762, 3, 0, 1376284, 5, 0, 1376285, 4, 0, 1376286, 4, 0, 1376287, 4, 0, 1376288, 4, 0, 1376289, 4, 0, 1376290, 4, 0, 1376291, 4, 0, 1376292, 4, 0, 1376293, 4, 0, 1376294, 4, 0, 1376295, 4, 0, 1376296, 4, 0, 1376297, 4, 0, 1376298, 3, 0, 1441820, 5, 0, 1441821, 4, 0, 1441822, 4, 0, 1441823, 4, 0, 1441824, 4, 0, 1441825, 4, 0, 1441826, 4, 0, 1441827, 4, 0, 1441828, 4, 0, 1441829, 4, 0, 1441830, 4, 0, 1441831, 4, 0, 1441832, 4, 0, 1441833, 4, 0, 1441834, 3, 0 )
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D"]
-scale = Vector2( 2.5, 3 )
-shape = SubResource( 4 )
-
-[node name="GhostWall" type="Sprite" parent="World/Area2D"]
-show_behind_parent = true
-texture = ExtResource( 18 )
+[node name="SpiderMonster" parent="World" instance=ExtResource( 18 )]
+position = Vector2( 1210.25, 436.313 )
 
 [node name="Sky" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 scroll_base_scale = Vector2( 0, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Sky"]
 motion_mirroring = Vector2( 4000, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Sky/ParallaxLayer"]
 position = Vector2( 654.794, 395.232 )
@@ -140,20 +145,30 @@ scale = Vector2( 1.29531, 0.911701 )
 texture = ExtResource( 19 )
 
 [node name="Mountains1" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 scroll_base_scale = Vector2( 0.1, 0.1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Mountains1"]
 motion_mirroring = Vector2( 4000, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Mountains1/ParallaxLayer"]
 position = Vector2( 1659.32, 342.045 )
 texture = ExtResource( 20 )
 
 [node name="Mountains2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 scroll_base_scale = Vector2( 0.2, 0.2 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Mountains2"]
 motion_mirroring = Vector2( 4000, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Mountains2/ParallaxLayer2"]
 position = Vector2( 1660.87, 386.836 )
