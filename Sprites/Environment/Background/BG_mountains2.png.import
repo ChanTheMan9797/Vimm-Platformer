@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BG_mountains2.png-91c608ac694e0be1c2f30299ba71705c.stex"
+path="res://.import/BG_mountains2.png-df8b0f13201ab8043b1922e036ea79c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BG_mountains2.png"
-dest_files=[ "res://.import/BG_mountains2.png-91c608ac694e0be1c2f30299ba71705c.stex" ]
+source_file="res://Sprites/Environment/Background/BG_mountains2.png"
+dest_files=[ "res://.import/BG_mountains2.png-df8b0f13201ab8043b1922e036ea79c3.stex" ]
 
 [params]
 

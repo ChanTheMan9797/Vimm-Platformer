@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vimmrun3.png-a0d0da2374980cd0dc8d16ea96b05bfe.stex"
+path="res://.import/TileMap.png-bcd853ef7670af7b387645582b39793a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Vimmrun3.png"
-dest_files=[ "res://.import/Vimmrun3.png-a0d0da2374980cd0dc8d16ea96b05bfe.stex" ]
+source_file="res://Sprites/Environment/Tilesheet/TileMap.png"
+dest_files=[ "res://.import/TileMap.png-bcd853ef7670af7b387645582b39793a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

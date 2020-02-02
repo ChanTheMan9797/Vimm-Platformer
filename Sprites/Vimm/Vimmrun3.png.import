@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vimmrun1 (1).png-7b282c96f773f36517ceaff6e068a260.stex"
+path="res://.import/Vimmrun3.png-c257537a7461e430c3d37e2c372434e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Vimmrun1 (1).png"
-dest_files=[ "res://.import/Vimmrun1 (1).png-7b282c96f773f36517ceaff6e068a260.stex" ]
+source_file="res://Sprites/Vimm/Vimmrun3.png"
+dest_files=[ "res://.import/Vimmrun3.png-c257537a7461e430c3d37e2c372434e5.stex" ]
 
 [params]
 

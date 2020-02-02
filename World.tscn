@@ -1,26 +1,26 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://VimmRun(2).png" type="Texture" id=2]
-[ext_resource path="res://Vimmrun1 (1).png" type="Texture" id=3]
-[ext_resource path="res://Vimmrun2.png" type="Texture" id=4]
-[ext_resource path="res://Vimmrun3.png" type="Texture" id=5]
-[ext_resource path="res://VimmIdle1.png" type="Texture" id=6]
-[ext_resource path="res://VimmIdle2.png" type="Texture" id=7]
-[ext_resource path="res://VimmIdle3.png" type="Texture" id=8]
-[ext_resource path="res://VimmIdle4.png" type="Texture" id=9]
-[ext_resource path="res://Vimmjmp0.png" type="Texture" id=10]
-[ext_resource path="res://Vimmjmp1.png" type="Texture" id=11]
-[ext_resource path="res://Vimmjmp2.png" type="Texture" id=12]
-[ext_resource path="res://Vimmjmp3.png" type="Texture" id=13]
-[ext_resource path="res://Vimmjmp4.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Vimm/VimmRun(2).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Vimm/Vimmrun1 (1).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Vimm/Vimmrun2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Vimm/Vimmrun3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Vimm/VimmIdle1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Vimm/VimmIdle2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Vimm/VimmIdle3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Vimm/VimmIdle4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp0.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp3.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Vimm/Vimmjmp4.png" type="Texture" id=14]
 [ext_resource path="res://Floor.gd" type="Script" id=15]
 [ext_resource path="res://icon.png" type="Texture" id=16]
 [ext_resource path="res://Area2D.gd" type="Script" id=17]
-[ext_resource path="res://VimmRun0.png" type="Texture" id=18]
-[ext_resource path="res://BG_sky.png" type="Texture" id=19]
-[ext_resource path="res://BG_mountains1.png" type="Texture" id=20]
-[ext_resource path="res://BG_mountains2.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Vimm/VimmRun0.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Environment/Background/BG_sky.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Environment/Background/BG_mountains1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Environment/Background/BG_mountains2.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -77,7 +77,6 @@ position = Vector2( -9, 0 )
 scale = Vector2( 0.786458, 0.772033 )
 frames = SubResource( 1 )
 animation = "Run"
-frame = 1
 speed_scale = 1.5
 playing = true
 
