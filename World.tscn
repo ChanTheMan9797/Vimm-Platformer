@@ -5,13 +5,13 @@
 [ext_resource path="res://Vimmrun1 (1).png" type="Texture" id=3]
 [ext_resource path="res://Vimmrun2.png" type="Texture" id=4]
 [ext_resource path="res://Vimmrun3.png" type="Texture" id=5]
-[ext_resource path="res://Vimmjmp0.png" type="Texture" id=6]
-[ext_resource path="res://Vimmjmp1.png" type="Texture" id=7]
-[ext_resource path="res://Vimmjmp2.png" type="Texture" id=8]
-[ext_resource path="res://VimmIdle1.png" type="Texture" id=9]
-[ext_resource path="res://VimmIdle2.png" type="Texture" id=10]
-[ext_resource path="res://VimmIdle3.png" type="Texture" id=11]
-[ext_resource path="res://VimmIdle4.png" type="Texture" id=12]
+[ext_resource path="res://VimmIdle1.png" type="Texture" id=6]
+[ext_resource path="res://VimmIdle2.png" type="Texture" id=7]
+[ext_resource path="res://VimmIdle3.png" type="Texture" id=8]
+[ext_resource path="res://VimmIdle4.png" type="Texture" id=9]
+[ext_resource path="res://Vimmjmp0.png" type="Texture" id=10]
+[ext_resource path="res://Vimmjmp1.png" type="Texture" id=11]
+[ext_resource path="res://Vimmjmp2.png" type="Texture" id=12]
 [ext_resource path="res://Vimmjmp3.png" type="Texture" id=13]
 [ext_resource path="res://Vimmjmp4.png" type="Texture" id=14]
 [ext_resource path="res://Floor.gd" type="Script" id=15]
@@ -29,15 +29,15 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
@@ -77,7 +77,6 @@ position = Vector2( -9, 0 )
 scale = Vector2( 0.786458, 0.772033 )
 frames = SubResource( 1 )
 animation = "Run"
-frame = 2
 speed_scale = 1.5
 playing = true
 
