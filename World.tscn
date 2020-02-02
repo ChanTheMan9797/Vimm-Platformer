@@ -1,24 +1,26 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://VimmRun(2).png" type="Texture" id=2]
 [ext_resource path="res://Vimmrun1 (1).png" type="Texture" id=3]
 [ext_resource path="res://Vimmrun2.png" type="Texture" id=4]
 [ext_resource path="res://Vimmrun3.png" type="Texture" id=5]
-[ext_resource path="res://Vimmjmp3.png" type="Texture" id=6]
-[ext_resource path="res://Vimmjmp4.png" type="Texture" id=7]
-[ext_resource path="res://Vimmjmp0.png" type="Texture" id=8]
-[ext_resource path="res://Vimmjmp1.png" type="Texture" id=9]
-[ext_resource path="res://Vimmjmp2.png" type="Texture" id=10]
-[ext_resource path="res://VimmIdle1.png" type="Texture" id=11]
-[ext_resource path="res://VimmIdle2.png" type="Texture" id=12]
-[ext_resource path="res://VimmIdle3.png" type="Texture" id=13]
-[ext_resource path="res://VimmIdle4.png" type="Texture" id=14]
+[ext_resource path="res://Vimmjmp0.png" type="Texture" id=6]
+[ext_resource path="res://Vimmjmp1.png" type="Texture" id=7]
+[ext_resource path="res://Vimmjmp2.png" type="Texture" id=8]
+[ext_resource path="res://VimmIdle1.png" type="Texture" id=9]
+[ext_resource path="res://VimmIdle2.png" type="Texture" id=10]
+[ext_resource path="res://VimmIdle3.png" type="Texture" id=11]
+[ext_resource path="res://VimmIdle4.png" type="Texture" id=12]
+[ext_resource path="res://Vimmjmp3.png" type="Texture" id=13]
+[ext_resource path="res://Vimmjmp4.png" type="Texture" id=14]
 [ext_resource path="res://Floor.gd" type="Script" id=15]
 [ext_resource path="res://icon.png" type="Texture" id=16]
 [ext_resource path="res://Area2D.gd" type="Script" id=17]
 [ext_resource path="res://VimmRun0.png" type="Texture" id=18]
-[ext_resource path="res://Vimmbg.png" type="Texture" id=19]
+[ext_resource path="res://BG_sky.png" type="Texture" id=19]
+[ext_resource path="res://BG_mountains1.png" type="Texture" id=20]
+[ext_resource path="res://BG_mountains2.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,19 +29,19 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Fall",
 "speed": 5.0
 } ]
 
@@ -75,6 +77,7 @@ position = Vector2( -9, 0 )
 scale = Vector2( 0.786458, 0.772033 )
 frames = SubResource( 1 )
 animation = "Run"
+frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -85,6 +88,7 @@ shape = SubResource( 2 )
 offset = Vector2( 0, -50 )
 current = true
 limit_right = 100000
+limit_bottom = 1000
 smoothing_enabled = true
 offset_v = -1.0
 offset_h = 1.0
@@ -99,6 +103,7 @@ editor_draw_drag_margin = true
 
 [node name="Floor" type="KinematicBody2D" parent="World/Floors"]
 position = Vector2( 160, 512 )
+scale = Vector2( 10, 1 )
 script = ExtResource( 15 )
 
 [node name="Sprite" type="Sprite" parent="World/Floors/Floor"]
@@ -124,14 +129,33 @@ shape = SubResource( 4 )
 show_behind_parent = true
 texture = ExtResource( 18 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Sky" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Sky"]
+motion_mirroring = Vector2( 4000, 0 )
+
+[node name="Sprite" type="Sprite" parent="Sky/ParallaxLayer"]
+position = Vector2( 654.794, 395.232 )
+scale = Vector2( 1.29531, 0.911701 )
+texture = ExtResource( 19 )
+
+[node name="Mountains1" type="ParallaxBackground" parent="."]
 scroll_base_scale = Vector2( 0.1, 0.1 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1294, 0 )
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Mountains1"]
+motion_mirroring = Vector2( 4000, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 3.27566, -105.025 )
-scale = Vector2( 1.72538, 2.53581 )
-texture = ExtResource( 19 )
-centered = false
+[node name="Sprite" type="Sprite" parent="Mountains1/ParallaxLayer"]
+position = Vector2( 1659.32, 342.045 )
+texture = ExtResource( 20 )
+
+[node name="Mountains2" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.2, 0.2 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Mountains2"]
+motion_mirroring = Vector2( 4000, 0 )
+
+[node name="Sprite" type="Sprite" parent="Mountains2/ParallaxLayer2"]
+position = Vector2( 1660.87, 386.836 )
+texture = ExtResource( 21 )
