@@ -24,6 +24,9 @@ func _physics_process(delta):
 		on_ground = true
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP_HEIGHT
+	
+	if Input.is_action_pressed("Restart"):
+		get_tree().reload_current_scene()
 	#Player Animation
 	
 	if is_on_floor():

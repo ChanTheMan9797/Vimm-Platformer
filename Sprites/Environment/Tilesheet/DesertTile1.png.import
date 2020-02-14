@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileMap.png-bcd853ef7670af7b387645582b39793a.stex"
+path="res://.import/DesertTile1.png-d090dd3c3b305fa29d1d85cd455fc76a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment/Tilesheet/TileMap.png"
-dest_files=[ "res://.import/TileMap.png-bcd853ef7670af7b387645582b39793a.stex" ]
+source_file="res://Sprites/Environment/Tilesheet/DesertTile1.png"
+dest_files=[ "res://.import/DesertTile1.png-d090dd3c3b305fa29d1d85cd455fc76a.stex" ]
 
 [params]
 
