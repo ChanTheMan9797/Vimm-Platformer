@@ -1,8 +1,8 @@
 extends KinematicBody2D
-const UP = Vector2(0, -1)
+const FLOOR = Vector2(0, -1)
 const GRAVITY = 20
 const SPEED = 250
-const JUMP_HEIGHT = -600
+const JUMP_HEIGHT = -525
 var extraJumps = 1
 var motion = Vector2()
 var on_ground = false
@@ -54,6 +54,6 @@ func _physics_process(delta):
 	
 
 
-	motion = move_and_slide(motion, UP)
+	motion = move_and_slide(motion, FLOOR)
 	pass
 	
