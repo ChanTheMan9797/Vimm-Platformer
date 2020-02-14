@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Floor.gd" type="Script" id=1]
@@ -36,21 +35,17 @@ extents = Vector2( 160, 32 )
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
 "loop": true,
 "name": "Jump",
 "speed": 3.0
 }, {
-<<<<<<< HEAD
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
+
+
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-<<<<<<< HEAD
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Run",
@@ -64,10 +59,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 27.7683 )
-=======
-
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
-
 [node name="Desert" type="TextureRect"]
 show_behind_parent = true
 anchor_right = 1.0
@@ -80,7 +71,6 @@ expand = true
 
 [node name="World" type="Node" parent="."]
 
-<<<<<<< HEAD
 [node name="Floors" type="Node" parent="World"]
 editor/display_folded = true
 
@@ -104,9 +94,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D"]
 scale = Vector2( 2.5, 3 )
 shape = SubResource( 2 )
@@ -131,12 +118,11 @@ frame = 2
 speed_scale = 1.5
 playing = true
 
-<<<<<<< HEAD
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( -12.32, 0 )
 shape = SubResource( 4 )
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
+
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -50 )
@@ -153,34 +139,24 @@ drag_margin_bottom = 0.12
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-<<<<<<< HEAD
 [node name="Enemy" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1502.05, -699.61 )
 
 [node name="BG_Environment" type="Node" parent="."]
 editor/display_folded = true
-=======
-
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
-
 [node name="Sky" type="ParallaxBackground" parent="BG_Environment"]
 editor/display_folded = true
 scroll_base_scale = Vector2( 0, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG_Environment/Sky"]
 
-<<<<<<< HEAD
 [node name="Sprite" type="Sprite" parent="BG_Environment/Sky/ParallaxLayer"]
 position = Vector2( 536.614, 327.354 )
 scale = Vector2( 2.54047, 2.26803 )
 texture = ExtResource( 20 )
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
 __meta__ = {
 "_edit_lock_": true
 }
-
-<<<<<<< HEAD
 [node name="Mountains1" type="ParallaxBackground" parent="BG_Environment"]
 editor/display_folded = true
 scroll_base_scale = Vector2( 0.05, 0.05 )
@@ -201,22 +177,18 @@ scroll_base_scale = Vector2( 0.1, 0.1 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG_Environment/Mountains2"]
 motion_mirroring = Vector2( 2048, 0 )
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
 
 [node name="Sprite" type="Sprite" parent="BG_Environment/Mountains2/ParallaxLayer2"]
 position = Vector2( 500.671, 320.248 )
 texture = ExtResource( 22 )
 
-<<<<<<< HEAD
 [node name="Dunes" type="ParallaxBackground" parent="BG_Environment"]
 editor/display_folded = true
 scroll_base_scale = Vector2( 0.3, 0.3 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG_Environment/Dunes"]
 motion_mirroring = Vector2( 2047.86, 0 )
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
+
 
 [node name="Sprite" type="Sprite" parent="BG_Environment/Dunes/ParallaxLayer2"]
 position = Vector2( 666.449, 298.723 )
@@ -225,15 +197,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-<<<<<<< HEAD
+
 [node name="Rock" type="ParallaxBackground" parent="BG_Environment"]
 editor/display_folded = true
 scroll_base_scale = Vector2( 0.5, 0.5 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG_Environment/Rock"]
 motion_mirroring = Vector2( 2500, 0 )
-=======
->>>>>>> 341e53828bac736c6a3c4e11c00ab5c3f77fc094
 
 [node name="Sprite" type="Sprite" parent="BG_Environment/Rock/ParallaxLayer2"]
 position = Vector2( 198.884, 477.516 )
