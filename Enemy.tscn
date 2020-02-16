@@ -1,14 +1,26 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Enemies/RedGuy/Walk/Red manwalk1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Enemies/RedGuy/Walk/Red manwalk2.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Enemies/RedGuy/Walk/Red manwalk3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Enemies/RedGuy/Walk/Red manwalk4.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man1.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man2.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man3.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Attack/Red manPaunch1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Attack/Red manPaunch2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Attack/Red manPaunch3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Attack/Red manPaunch4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man3.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Idle/Red man4.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun3.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun4.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun5.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun6.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun7.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Enemies/RedGuy/Run/Red manrun8.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,12 +31,29 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
+"name": "Attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
 "name": "Idle",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.6264, 31.0878 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 16.5482
+height = 33.7395
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 135.69, 97.5584 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 19.664, 37.2887 )
 
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -32,6 +61,8 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk"
+playing = true
+offset = Vector2( 12, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -51,8 +82,46 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Look" type="RayCast2D" parent="."]
-position = Vector2( 22.5579, 3.85748 )
-rotation = 4.71239
-scale = Vector2( 10, 7 )
+[node name="LookRight" type="Area2D" parent="."]
+position = Vector2( 53.0595, 3.23534 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LookRight"]
+position = Vector2( 103.995, -4.34392 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LookLeft" type="Area2D" parent="."]
+position = Vector2( 53.0595, 3.23534 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LookLeft"]
+position = Vector2( -206.456, -3.88719 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LPunch" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LPunch"]
+position = Vector2( -38.4332, -0.785411 )
+shape = SubResource( 4 )
+
+[node name="RPunch" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RPunch"]
+position = Vector2( 41.2315, -0.79141 )
+shape = SubResource( 4 )
 [connection signal="timeout" from="." to="." method="_on_Enemy_timeout"]
+[connection signal="body_entered" from="LookRight" to="." method="_on_LookRight_body_entered"]
+[connection signal="body_entered" from="LookRight" to="." method="_on_Look_body_entered"]
+[connection signal="body_exited" from="LookRight" to="." method="_on_Look_body_exited"]
+[connection signal="body_entered" from="LookLeft" to="." method="_on_LookLeft_body_entered"]
+[connection signal="body_entered" from="LookLeft" to="." method="_on_Look_body_entered"]
+[connection signal="body_exited" from="LookLeft" to="." method="_on_LookLeft_body_exited"]
+[connection signal="body_exited" from="LookLeft" to="." method="_on_Look_body_exited"]
+[connection signal="body_entered" from="LPunch" to="." method="_on_LPunch_body_entered"]
+[connection signal="body_exited" from="LPunch" to="." method="_on_LPunch_body_exited"]
+[connection signal="body_entered" from="RPunch" to="." method="_on_RPunch_body_entered"]
+[connection signal="body_exited" from="RPunch" to="." method="_on_RPunch_body_exited"]
