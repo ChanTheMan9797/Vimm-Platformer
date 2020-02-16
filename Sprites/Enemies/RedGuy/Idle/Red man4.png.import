@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BG_mountains1.png-8c946247cd280a95daea4309eca45f95.stex"
+path="res://.import/Red man4.png-4265a63174d223e3b1229b1e47eeb516.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment/Background/BG_mountains1.png"
-dest_files=[ "res://.import/BG_mountains1.png-8c946247cd280a95daea4309eca45f95.stex" ]
+source_file="res://Sprites/Enemies/RedGuy/Idle/Red man4.png"
+dest_files=[ "res://.import/Red man4.png-4265a63174d223e3b1229b1e47eeb516.stex" ]
 
 [params]
 
